@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/emp")
@@ -18,8 +19,8 @@ public class EmpController {
     private final EmpService empService;
 
     @GetMapping
-    public ResponseEntity<ArrayList<EmpDto>> getEmpList() {
-        ArrayList<EmpDto> empDtos = empService.findEmpList();
+    public ResponseEntity<List<EmpDto>> getEmpList() {
+        List<EmpDto> empDtos = empService.findEmpList();
         return ResponseEntity.status(HttpStatus.OK).body(empDtos);
     }
 
@@ -33,5 +34,17 @@ public class EmpController {
     public ResponseEntity<String> createEmp(@RequestBody EmpDto empDto) {
         empService.createEmp(empDto);
         return ResponseEntity.status(HttpStatus.CREATED).body("Emp created successfully");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateEmp(@RequestBody EmpDto empDto, @PathVariable("id") Long id) {
+        empService.updateEmp(empDto, id);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Emp updated successfully");
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteDept(@PathVariable("id") Long id) {
+        empService.deleteEmp(id);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Dept deleted successfully");
     }
 }
