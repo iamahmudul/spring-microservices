@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/apu/v1/dept")
+@RequestMapping("/api/v1/dept")
 @AllArgsConstructor
 public class DeptController {
 

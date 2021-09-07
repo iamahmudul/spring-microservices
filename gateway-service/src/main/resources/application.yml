@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: GatewayMicroservice
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: dept_route
+#          uri: http:8001/api/v1/dept
+#          predicates:
+#            - Path=/api/v1/dept/**
+#        - id: emp_route
+#          uri: http:8002/api/v1/emp
+#          predicates:
+#            - Path=/api/v1/emp/**
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 9000
