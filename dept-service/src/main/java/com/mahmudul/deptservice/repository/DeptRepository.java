@@ -1,4 +1,7 @@
 package com.mahmudul.deptservice.repository;
 
-public interface DeptRepository {
+import com.mahmudul.deptservice.model.Dept;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DeptRepository extends JpaRepository<Dept, Long> {
 }
