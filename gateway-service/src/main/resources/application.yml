@@ -3,6 +3,15 @@ spring:
     name: GatewayMicroservice
 #  cloud:
 #    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods: "*"
+#        add-to-simple-url-handler-mapping: true
+
+#  cloud:
+#    gateway:
 #      routes:
 #        - id: dept_route
 #          uri: http:8001/api/v1/dept
@@ -12,11 +21,11 @@ spring:
 #          uri: http:8002/api/v1/emp
 #          predicates:
 #            - Path=/api/v1/emp/**
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
 server:
   port: 9000
