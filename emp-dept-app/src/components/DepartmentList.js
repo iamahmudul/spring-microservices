@@ -13,10 +13,6 @@ const DepartmentList =() => {
         });
     }, []);
     
-    const addDepartment = () => {
-        history.push('/department/add');
-    }
-    
     const editDepartment = (id) => {
         history.push(`/department/edit/${id}`);
     }
@@ -26,6 +22,7 @@ const DepartmentList =() => {
             setDepartmentList(departmentList.filter(department => department.id !== id));
         })
     }
+    
     return (
         <Container className="mt-4">
             <h2>Departments</h2>

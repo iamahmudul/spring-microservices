@@ -6,6 +6,7 @@ import DepartmentList from '../components/DepartmentList';
 import EmployerList from '../components/EmployerList';
 import AddEmployer from '../components/AddEmployer';
 import EditDepartment from '../components/EditDepartment';
+import EditEmployer from '../components/EditEmployer';
 
 const AppRouter =() => {
     return (
@@ -19,16 +20,34 @@ const AppRouter =() => {
                             path="/departments"
                             exact={true}
                         />
-                        <Route component={AddDepartment} path="/department/add" exact={true} />
+                        <Route
+                            component={AddDepartment}
+                            path="/department/add"
+                            exact={true}
+                        />
                         <Route
                             render={(props) => (
                                 <EditDepartment {...props} />
                             )}
                             path="/department/edit/:id"
                         />
-
-                        <Route component={EmployerList} path="/employers" exact={true} />
-                        <Route component={AddEmployer} path="/employer/add" exact={true} />
+                        <Route
+                            component={EmployerList}
+                            path="/employers"
+                            exact={true}
+                        />
+                        <Route
+                            component={AddEmployer}
+                            path="/employer/add"
+                            exact={true}
+                        />
+                        
+                        <Route
+                            render={(props) => (
+                                <EditEmployer {...props} />
+                            )}
+                            path="/employer/edit/:id"
+                        />
                     </Switch>
                 </div>
             </div>

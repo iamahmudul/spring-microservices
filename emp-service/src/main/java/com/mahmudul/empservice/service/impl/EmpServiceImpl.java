@@ -67,6 +67,7 @@ public class EmpServiceImpl implements EmpService {
 
     private EmpDto mapEmpToDto(Emp emp) {
         return EmpDto.builder()
+                .id(emp.getId())
                 .code(emp.getCode())
                 .name(emp.getName())
                 .dob(emp.getDob())
@@ -78,6 +79,7 @@ public class EmpServiceImpl implements EmpService {
 
     private Emp mapDtoToDept(EmpDto empDto) {
         return Emp.builder()
+                .id(empDto.getId())
                 .code(empDto.getCode())
                 .name(empDto.getName())
                 .dob(empDto.getDob())

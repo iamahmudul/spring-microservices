@@ -9,6 +9,7 @@ const EditDepartment = () => {
     const [department, setDepartment] = useState({});
     
     useEffect(() => {
+        console.log(id);
         DepartmentService.getDepartmentById(id).then((res) => {
             setDepartment(res.data);
         });
@@ -16,8 +17,6 @@ const EditDepartment = () => {
 
     const handleOnSubmit = (department) => {
         DepartmentService.editDepartment(department, id).then((response) => {
-            const allRepos = response.data;
-            console.log(allRepos);
             history.push("/departments");
         });
     };

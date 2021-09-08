@@ -26,7 +26,7 @@ const DepartmentForm = ({ department = {}, handleOnSubmit }) => {
         }
         setErrorMsg(errorMsg);
     }
-    console.log(':::::::::: ', name, active);
+    
     return (
         <Container className="mt-4">
             <h2>Department Form</h2>
@@ -38,7 +38,7 @@ const DepartmentForm = ({ department = {}, handleOnSubmit }) => {
                         type="text"
                         name="name"
                         value={name}
-                        placeholder="Ente department name"
+                        placeholder="Enter department name"
                         onChange={(e) => setName(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId="active">
