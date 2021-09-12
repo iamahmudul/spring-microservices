@@ -25,7 +25,7 @@ CREATE TABLE `dept` (
   `name` varchar(35) DEFAULT NULL,
   `active` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 /*Data for the table `dept` */
 
@@ -45,6 +45,19 @@ CREATE TABLE `emp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `emp` */
+
+/*Table structure for table `hibernate_sequence` */
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `hibernate_sequence` */
+
+insert  into `hibernate_sequence`(`next_val`) values 
+(32);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
